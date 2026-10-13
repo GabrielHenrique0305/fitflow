@@ -1,0 +1,70 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* Tema padrão do FitFlow (escuro + verde neon) */
+:root {
+  --ink-900: 10 17 28;
+  --ink-800: 15 24 38;
+  --ink-700: 22 32 47;
+  --ink-600: 30 43 61;
+  --ink-500: 43 59 81;
+  --line: 58 76 102;
+  --text: 246 250 255;
+  --text-muted: 199 213 230;
+  --text-faint: 159 178 201;
+  --brand: 59 232 134;
+  --brand-strong: 38 214 115;
+  --brand-soft: 15 58 38;
+  --brand-ink: 3 33 15;
+  --alert: 255 154 154;
+  --alert-soft: 58 20 20;
+}
+/* Modo alto contraste: mesma identidade, superfícies pretas e traços brancos */
+.contraste-alto {
+  --ink-900: 0 0 0;
+  --ink-800: 0 0 0;
+  --ink-700: 0 0 0;
+  --ink-600: 26 26 26;
+  --ink-500: 45 45 45;
+  --line: 255 255 255;
+  --text: 255 255 255;
+  --text-muted: 255 255 255;
+  --text-faint: 235 235 235;
+  --brand: 91 255 163;
+  --brand-strong: 130 255 189;
+  --brand-soft: 0 0 0;
+  --brand-ink: 0 0 0;
+  --alert: 255 186 186;
+  --alert-soft: 0 0 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/* Focus visível e consistente em todos os controles (acessibilidade por teclado) */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid rgb(var(--brand));
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+.contraste-alto :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #ffffff;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
